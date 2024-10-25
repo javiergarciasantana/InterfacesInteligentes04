@@ -1,27 +1,43 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro; // Ensure you include this
 
-public class ScoreUI : MonoBehaviour
+public class ScoreUi : MonoBehaviour
 {
-  public Text scoreText; // Referencia al componente Text
+    public TextMeshProUGUI scoreText; // Reference to the TextMeshPro component
 
-  private void Start()
-  {
-    // Inicializar el texto con la puntuación inicial
-    UpdateScoreText(ScoreManagerMod.GetScore());
+    private void Start()
+    {
+        // Ensure the ScoreManager instance is initialized
+        if (ScoreManagerMod.Instance == null)
+        {
+            Debug.LogError("ScoreManagerMod instance is null. Please ensure it is initialized.");
+            return;
+        }
 
-    // Suscribirse al evento de cambio de puntuación
-    ScoreManagerMod.Instance.onScoreChanged.AddListener(UpdateScoreText);
-  }
+        // Set initial score display
+        UpdateScoreDisplay(ScoreManagerMod.GetScore());
 
-  private void OnDestroy()
-  {
-    // Asegurarse de desuscribirse para evitar fugas de memoria
-    ScoreManagerMod.Instance.onScoreChanged.RemoveListener(UpdateScoreText);
-  }
+        // Subscribe to score change events
+        ScoreManagerMod.Instance.onScoreChanged.AddListener(UpdateScoreDisplay);
+    }
 
-  private void UpdateScoreText(int newScore)
-  {
-    scoreText.text = "Score: " + newScore.ToString(); // Actualizar el texto con la nueva puntuación
-  }
+    private void OnDestroy()
+    {
+        // Unsubscribe from score change events to prevent memory leaks
+        if (ScoreManagerMod.Instance != null)
+        {
+            ScoreManagerMod.Instance.onScoreChanged.RemoveListener(UpdateScoreDisplay);
+        }
+    }
+
+    // Method to update the UI with the current score
+    private void UpdateScoreDisplay(int currentScore)
+    { 
+      if (currentScore == 100) {
+        scoreText.text = "¡Muy bien!"; // Update the text with the current score 
+        return;
+      }
+      //yield WaitForSeconds (2);
+      scoreText.text = "Puntuación: " + currentScore; // Update the text with the current score
+    }
 }

@@ -33,7 +33,7 @@ public class EggMod : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Cube"))
         {
-            ScoreManagerMod.AddScore(15, collision.gameObject.tag); // Update score for Cube
+            ScoreManagerMod.AddScore(20, collision.gameObject.tag); // Update score for Cube
             Collect(); // Call Collect() to deactivate the egg
         }
     }

@@ -1,0 +1,38 @@
+# Ignore Visual Studio files
+.vscode/
+*.sln
+*.csproj
+*.userprefs
+
+# Ignore build outputs
+/build/
+*/Build/
+*.apk
+*.unitypackage
+*.app
+*.exe
+*.dll
+
+# Ignore Unity generated files
+Library/
+Temp/
+Obj/
+Logs/
+*.cs.meta
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+*.suo
+*.user
+*.unity
+*.collab
+
+# Ignore user-specific files
+*.userprefs
+
+# Ignore cache files
+*.unityproj
+
+# Ignore Asset Store Tools
+Assets/AssetStoreTools*
