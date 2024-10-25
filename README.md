@@ -76,6 +76,7 @@ Create a UI interface to show the score obtained by the cube using Unity's Canva
 This task focuses on developing a UI that dynamically updates to display the player's score in real-time using Unity's Canvas system.
 
 #### Files `EggMod.cs` `ScoreManagerMod.cs` `ScoreUi.cs`
+
 ![Practica-IV-SampleScene-Windows_-Mac_-Linux-Unity-2022 3 48f1_-_DX11_-2024-10-25-03-42-26](https://github.com/user-attachments/assets/f613f9d9-52e3-459c-83a8-a2d5af011769)
 
 ---
@@ -89,6 +90,7 @@ Implement a mechanic where every 100 points, the player receives a reward displa
 This section sets up a reward system that triggers when the player reaches certain score milestones, updating the UI accordingly and providing feedback to the player.
 
 #### Files `EggMod.cs` `ScoreManagerMod.cs` `ScoreUi.cs` 
+
 ![Practica-IV-SampleScene-Windows_-Mac_-Linux-Unity-2022 3 48f1_-_DX11_-2024-10-25-03-42-26](https://github.com/user-attachments/assets/c56e5206-eaf4-4a19-9178-1b9f9a3120d2)
 
 ---
@@ -103,6 +105,7 @@ This exercise involves setting up a scene that aligns with the initial prototype
 
 #### Files
 `MultipleCollisionDetector.cs`, `Type1Spider.cs`, `Egg.cs`
+
 ![copia 4 - Trim](https://github.com/user-attachments/assets/36e87e2e-14dd-447f-aafc-0870135d8ef9)
 
 ---
